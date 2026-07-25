@@ -1,8 +1,19 @@
 import http.server
 import socketserver
 import os
+import subprocess
 
 PORT = int(os.environ.get("PORT", 7860))
+
+# Grab hardware specs
+try:
+    mem_bytes = os.sysconf('SC_PAGE_SIZE') * os.sysconf('SC_PHYS_PAGES')
+    mem_mb = mem_bytes / (1024.**2)
+    cpu_count = os.cpu_count()
+    print(f"\n[SYSTEM REPORT] Available Container RAM: {mem_mb:.2f} MB")
+    print(f"[SYSTEM REPORT] Available Container CPUs: {cpu_count}\n")
+except Exception as e:
+    print(f"[SYSTEM REPORT] Could not determine hardware specs: {e}")
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
