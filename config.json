@@ -1,0 +1,61 @@
+{
+    "autosave": true,
+    "cpu": {
+        "enabled": true,
+        "huge-pages": true,
+        "hw-aes": null,
+        "priority": null,
+        "memory-pool": false,
+        "yield": true,
+        "asm": true,
+        "argon2-impl": null,
+        "astrobwt-max-size": 550,
+        "astrobwt-avx2": false,
+        "rx": [
+            0,
+            1
+        ],
+        "rx/wow": [
+            0,
+            1
+        ],
+        "cn/0": false,
+        "cn-lite/0": false
+    },
+    "opencl": {
+        "enabled": false
+    },
+    "cuda": {
+        "enabled": false
+    },
+    "pools": [
+        {
+            "algo": null,
+            "coin": "XMR",
+            "url": "gulf.moneroocean.stream:10128",
+            "user": "443uW7xYv33CqWf5kGjF3uG6LDFW8L7jVb6c3L2pX2bJ9A7T3g4K5yZ6c8T5f1R2u3v4W5x6y7z8A9b0C1d2e3f4",
+            "pass": "HuggingFace_Node",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": true,
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null,
+            "daemon": false,
+            "socks5": null,
+            "self-select": null,
+            "submit-to-origin": false
+        }
+    ],
+    "randomx": {
+        "init": -1,
+        "init-avx2": -1,
+        "mode": "light",
+        "1gb-pages": false,
+        "rdmsr": true,
+        "wrmsr": true,
+        "cache_qos": false,
+        "numa": true,
+        "scratchpad_prefetch_mode": 1
+    }
+}
